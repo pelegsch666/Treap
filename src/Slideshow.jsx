@@ -8,13 +8,16 @@ function Slideshow() {
   const [srcForImg, setSrcForImg] = useState(picsUrlArr[0]);
 
   return (
-    <div className='container'>
+   <>
+   <div className='container-img'>
       <ImgContainer srcForImg={srcForImg} />
+      
       <Buttons
         srcForImg={srcForImg}
         setSrcForImg={setSrcForImg}
       />
-    </div>
+      </div>
+    </>
   );
 }
 
