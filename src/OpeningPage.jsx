@@ -7,9 +7,9 @@ function OpeningPage() {
   if (isStart === false) {
     return (
       <div className="container">
-        <h1>This app was made to make your trip more meaningful </h1>
+        <h1>This app was made to gather must beautiful visuals</h1>
         
-        <button onClick={() => setIsStart(true)}>mann</button>
+        <button onClick={() => setIsStart(true)}>Start</button>
       </div>
     );
   } else {
