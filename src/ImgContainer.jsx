@@ -20,7 +20,7 @@ export default function ImgContainer({ names }) {
 
   return (
     <>
-      <img src={`http://localhost:4000/images/${names[idx]}`}></img>
+      <img src={`https://alexgrey-api.onrender.com/images/${names[idx]}`}></img>
       <div className="buttons-section">
         <button onClick={() => handleIdxChange(idx, 'next')}>Next</button>
         <button onClick={() => handleIdxChange(idx, 'prev')}>Prev</button>

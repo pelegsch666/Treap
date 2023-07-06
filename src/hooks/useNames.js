@@ -5,8 +5,8 @@ export const useNames = () => {
   const [names, setNames] = useState([]);
   useEffect(() => {
     const fetchNames = async () => {
-      const data = await axios.get('http://localhost:4000/names');
-      console.log(data)
+      const data = await axios.get('https://alexgrey-api.onrender.com/names');
+
       setNames(data.data);
     };
     fetchNames();
