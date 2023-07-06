@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import './ImgContainer.css';
+import { useState } from 'react';
+
 // eslint-disable-next-line react/prop-types
 export default function ImgContainer({ names }) {
   const [idx, setIdx] = useState(0);
