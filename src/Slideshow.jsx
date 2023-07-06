@@ -1,6 +1,6 @@
 
 // import picsUrlArr from '/src/imgArr.js';
-import './Slideshow.css';
+import './styles/Slideshow.css';
 import ImgContainer from './ImgContainer';
 // import Buttons from './Buttons';
 import useNames from './hooks/useNames';

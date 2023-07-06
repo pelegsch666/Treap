@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './opening.css';
+import './styles/OpeningPage.css';
 import Slideshow from './Slideshow';
 
 function OpeningPage() {
