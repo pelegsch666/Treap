@@ -8,7 +8,7 @@ import useNames from './hooks/useNames';
 function Slideshow() {
   
   const [names] = useNames();
-  console.log(names)
+  console.log(names) 
   // Update imageUrl when arrOfImagesPaths changes
   
   

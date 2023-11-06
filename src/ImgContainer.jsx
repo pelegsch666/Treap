@@ -17,7 +17,7 @@ export default function ImgContainer({ names }) {
       setIdx(0);
     }
   };
-
+   console.log(names) 
   return (
     <>
       <img src={`https://alexgrey-api.onrender.com/images/${names[idx]}`}></img>
