@@ -3,7 +3,7 @@
 import './styles/Slideshow.css';
 import ImgContainer from './ImgContainer';
 // import Buttons from './Buttons';
-import useNames from './hooks/useNames';
+import { useNames } from './hooks/useNames';
 
 function Slideshow() {
   
