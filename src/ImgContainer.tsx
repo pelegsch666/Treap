@@ -1,14 +1,21 @@
 
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import './styles/Button.css'
 
-// eslint-disable-next-line react/prop-types
-export default function ImgContainer({ names }) {
+
+
+
+
+type Props = {
+  names: never[] | Dispatch<SetStateAction<never[]>>| string[];
+
+};
+
+export default function ImgContainer({ names }: Props) {
   const [idx, setIdx] = useState(0);
-  // eslint-disable-next-line react/prop-types
   const arrLength = names.length;
 
-  const handleIdxChange = (idx, side) => {
+  const handleIdxChange = (idx: number, side: 'next' | 'prev') => {
     setIdx(side === 'next' ? idx + 1 : idx - 1);
     if (idx === 0 && side === 'prev') {
       setIdx(arrLength - 1);
@@ -17,10 +24,13 @@ export default function ImgContainer({ names }) {
       setIdx(0);
     }
   };
-   console.log(names) 
+
+
+ if(names.length === 0) return (<div>loading...</div>)
+ 
   return (
     <>
-      <img src={`https://alexgrey-api.onrender.com/images/${names[idx]}`}></img>
+      <img src={`https://alexgrey-api.onrender.com/images/${names[idx]}`} />
       <div className="buttons-section">
         <button onClick={() => handleIdxChange(idx, 'next')}>Next</button>
         <button onClick={() => handleIdxChange(idx, 'prev')}>Prev</button>
@@ -28,3 +38,5 @@ export default function ImgContainer({ names }) {
     </>
   );
 }
+
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import OpeningPage from './OpeningPage.jsx';
+import OpeningPage from './OpeningPage.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 
