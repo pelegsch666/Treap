@@ -1,26 +1,35 @@
+import { useEffect, useState } from 'react';
+    import './styles/Slideshow.css';
+    import ImgContainer from './ImgContainer';
+    import { useNames } from './hooks/useNames';
 
-// import picsUrlArr from '/src/imgArr.js';
-import './styles/Slideshow.css';
-import ImgContainer from './ImgContainer';
-// import Buttons from './Buttons';
-import { useNames } from './hooks/useNames';
-
-function Slideshow() {
   
-  const [names] = useNames();
-  console.log(names) 
-  // Update imageUrl when arrOfImagesPaths changes
+
+
   
   
 
-  return (
-    <>
-      <div className="container-img">
-        <ImgContainer names={names} />
 
-      </div>
-    </>
-  );
-}
+    
 
-export default Slideshow;
+    function Slideshow() {
+      const [names, setNames] = useState([]);
+      const fetchNames = async () => {
+        const namesFromData =  useNames();
+       if(namesFromData) setNames(namesFromData);
+      }
+      useEffect(() => {
+        fetchNames();
+      },[])
+
+      return (
+        <>
+          <div className="container-img">
+            <ImgContainer names={names} />
+          </div>
+        </>
+      );
+    }
+
+    export default Slideshow;
+
