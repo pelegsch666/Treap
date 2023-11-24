@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 export const useNames = () => {
-  const [names, setNames] = useState([]);
+  const [names, setNames] = useState<string[]>([]);
   useEffect(() => {
     const fetchNames = async () => {
       const data = await axios.get('https://alexgrey-api.onrender.com/names');
@@ -12,7 +12,7 @@ export const useNames = () => {
     fetchNames();
   }, []);
 
-  return [names, setNames];
+  return names;
 };
 
 export default useNames;

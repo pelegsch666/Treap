@@ -7,7 +7,7 @@ import './styles/Button.css'
 
 
 type Props = {
-  names: never[] | Dispatch<SetStateAction<never[]>>| string[];
+  names: string[];
 
 };
 
@@ -26,8 +26,8 @@ export default function ImgContainer({ names }: Props) {
   };
 
 
- if(names.length === 0) return (<div>loading...</div>)
- 
+ if(names.length === 0 ) return (<div>loading...</div>)
+
   return (
     <>
       <img src={`https://alexgrey-api.onrender.com/images/${names[idx]}`} />
