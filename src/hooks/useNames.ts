@@ -12,7 +12,7 @@ export const useNames = () => {
     fetchNames();
   }, []);
 
-  return [names, setNames];
+  return names;
 };
 
 export default useNames;

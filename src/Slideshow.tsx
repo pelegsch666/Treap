@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
     
 
     function Slideshow() {
-      const [names, setNames] = useState([]);
+      const [names, setNames] = useState<string[]>([]);
       const fetchNames = async () => {
         const namesFromData =  useNames();
        if(namesFromData) setNames(namesFromData);
