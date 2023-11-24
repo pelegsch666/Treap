@@ -1,6 +1,7 @@
 
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import './styles/Button.css'
+import axios from 'axios';
 
 
 
@@ -13,8 +14,26 @@ type Props = {
 
 export default function ImgContainer({ names }: Props) {
   const [idx, setIdx] = useState(0);
-  const arrLength = names.length;
+  const [images, setImages] = useState<string[]>([]);
+  const fetchNames = async () => { 
+    try {
+      const res = await axios.get('https://alexgrey-api.onrender.com/names')
+      setImages(res.data)
+      console.log(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+  
+  
+  
+  useEffect( () => {
+    fetchNames()
+  }, []);
 
+  const arrLength = names.length;
+ console.log(images[2])
   const handleIdxChange = (idx: number, side: 'next' | 'prev') => {
     setIdx(side === 'next' ? idx + 1 : idx - 1);
     if (idx === 0 && side === 'prev') {
@@ -26,11 +45,11 @@ export default function ImgContainer({ names }: Props) {
   };
 
 
- if(names.length === 0 ) return (<div>loading...</div>)
+ if(images.length === 0 ) return (<div>loading...</div>)
 
   return (
     <>
-      <img src={`https://alexgrey-api.onrender.com/images/${names[idx]}`} />
+      <img src={`src/assets/${images[idx]}`} />
       <div className="buttons-section">
         <button onClick={() => handleIdxChange(idx, 'next')}>Next</button>
         <button onClick={() => handleIdxChange(idx, 'prev')}>Prev</button>

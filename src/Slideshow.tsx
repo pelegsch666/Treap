@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
     import './styles/Slideshow.css';
     import ImgContainer from './ImgContainer';
-    import { useNames } from './hooks/useNames';
-
-  
+    
 
 
   
@@ -14,13 +12,8 @@ import { useEffect, useState } from 'react';
 
     function Slideshow() {
       const [names, setNames] = useState<string[]>([]);
-      const fetchNames = async () => {
-        const namesFromData =  useNames();
-       if(namesFromData) setNames(namesFromData);
-      }
-      useEffect(() => {
-        fetchNames();
-      },[])
+
+   
 
       return (
         <>

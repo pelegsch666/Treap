@@ -1,5 +1,5 @@
 
-import './App.css';
+
 import OpeningPage from './OpeningPage';
 
 
