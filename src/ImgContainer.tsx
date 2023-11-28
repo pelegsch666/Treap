@@ -33,7 +33,7 @@ export default function ImgContainer({ names }: Props) {
   }, []);
 
   const arrLength = names.length;
- console.log(images[2])
+
   const handleIdxChange = (idx: number, side: 'next' | 'prev') => {
     setIdx(side === 'next' ? idx + 1 : idx - 1);
     if (idx === 0 && side === 'prev') {
@@ -49,7 +49,7 @@ export default function ImgContainer({ names }: Props) {
 
   return (
     <>
-      <img src={`src/assets/${images[idx]}`} />
+      <img src={`https://alexgrey-api.onrender.com/images/${images[idx]}`} />
       <div className="buttons-section">
         <button onClick={() => handleIdxChange(idx, 'next')}>Next</button>
         <button onClick={() => handleIdxChange(idx, 'prev')}>Prev</button>

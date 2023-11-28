@@ -2,8 +2,13 @@ import { useState } from 'react';
 import './styles/OpeningPage.css';
 import Slideshow from './Slideshow';
 
+
+
+
 function OpeningPage() {
   const [isStart, setIsStart] = useState(false);
+ 
+  
   if (isStart === false) {
     return (
       <div className="container">
