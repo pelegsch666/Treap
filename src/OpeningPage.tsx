@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './styles/OpeningPage.css';
 import Slideshow from './Slideshow';
-import { useSignal } from "@preact/signals";
+
 
 
 
