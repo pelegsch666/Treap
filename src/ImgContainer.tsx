@@ -1,5 +1,5 @@
 
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import './styles/Button.css'
 import axios from 'axios';
 
@@ -33,7 +33,7 @@ export default function ImgContainer({ names }: Props) {
   }, []);
 
   const arrLength = names.length;
-
+console.log(images)
   const handleIdxChange = (idx: number, side: 'next' | 'prev') => {
     setIdx(side === 'next' ? idx + 1 : idx - 1);
     if (idx === 0 && side === 'prev') {
